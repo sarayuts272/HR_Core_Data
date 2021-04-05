@@ -156,7 +156,7 @@ export default function JobVacancyApplyAdmin(props) {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} 
               </CCardBody>
             </CCard>
           </CCol>
