@@ -124,8 +124,8 @@ function AddEmployee(props) {
 
   // change Profile Name
   const [profile, setProfile] = React.useState({
-    firstName: "",
-    lastName: "",
+    firstName: "First Name",
+    lastName: "Last Name",
   });
 
   const handleChangeName = (event) => {
@@ -135,7 +135,7 @@ function AddEmployee(props) {
   const { firstName, lastName } = profile;
 
   // get job
-  const [getJob_JobPosition, setGetJob_JobPosition] = useState("");
+  const [getJob_JobPosition, setGetJob_JobPosition] = useState("Job Position");
 
   const handleChangeGetJob = (e) => {
       setGetJob_JobPosition(e.target.value)

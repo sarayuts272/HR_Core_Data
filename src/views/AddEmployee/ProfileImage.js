@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const thumbsContainer = {
   display: "flex",
   flexDirection: "row",
@@ -48,11 +47,7 @@ const img = {
 export default function ProfileImage(props) {
   const classes = useStyles();
   const [files, setFiles] = useState([]);
-  const {
-    getRootProps,
-    getInputProps,
-    open,
-  } = useDropzone({
+  const { getRootProps, getInputProps, open } = useDropzone({
     accept: "image/*",
     noClick: true,
     noKeyboard: true,
@@ -68,9 +63,26 @@ export default function ProfileImage(props) {
   });
 
   const thumbs = files.map((file) => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        <img src={file.preview} style={img} alt=" "/>
+    // <div style={thumb} key={file.name}>
+    //   <div style={thumbInner}>
+    <div key={file.name}>
+      <div>
+        {/* <img src={file.preview} style={img} alt=" " /> */}
+        <img
+          alt=" "
+          // src={`${process.env.PUBLIC_URL}/images/dogdog.jpg`}
+          src={file.preview}
+          style={{
+            position: "relative",
+            zIndex: 20,
+            borderRadius: "50%",
+            width: "130px",
+            height: "130px",
+            display: "block",
+            objectFit: "cover",
+            transition: "all 0.3s ease",
+          }}
+        />
       </div>
     </div>
   ));
@@ -84,21 +96,28 @@ export default function ProfileImage(props) {
   );
 
   return (
-    <div >
+    <div>
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         {/* {files == 0? <Avatar onClick={open} className={classes.avatar} /> : <aside style={thumbsContainer} className={classes.avatar}>{thumbs}</aside>} */}
-        {files === 0 ? (
+        {files == 0 ? (
           <img
+            alt=" "
+            src={`${process.env.PUBLIC_URL}/images/all/selectImage.png`}
+            style={{
+              position: "relative",
+              zIndex: 20,
+              // borderRadius: "50%",
+              width: "130px",
+              height: "130px",
+              display: "block",
+              objectFit: "cover",
+              transition: "all 0.3s ease",
+            }}
             onClick={open}
-            src={UserImg}
-            alt="UserImg"
-            className={classes.avatar}
           />
         ) : (
-          <aside style={thumbsContainer} className={classes.avatar}>
-            {thumbs}
-          </aside>
+          <aside>{thumbs}</aside>
         )}
       </div>
       <aside>

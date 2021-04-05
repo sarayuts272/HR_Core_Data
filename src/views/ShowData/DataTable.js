@@ -255,11 +255,11 @@ const DataTable = (props) => {
 
   return (
     <div>
-      <Grid container spacing={3}>
+      <Grid container >
         {/* Table */}
-        <Grid item xs={9} md={12}>
-          <Grid container spacing={3}>
-            <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={12}>
+          <Grid container >
+            <Grid item xs={12} md={6}>
               {/* Searching */}
               <div className={classes.row1}>
                 <Paper className={classes.rootSearch}>
@@ -277,7 +277,7 @@ const DataTable = (props) => {
             </Grid>
 
             {/* ---Add Button ____ */}
-            <Grid item xs={6} md={6}>
+            <Grid item xs={0} md={6}>
               <div className={classes.row2}>
                 <span className={classes.spacer} />
                 <Button

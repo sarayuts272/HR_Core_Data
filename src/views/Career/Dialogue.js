@@ -3,10 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import {
-  TextField,
-  Grid,
-} from "@material-ui/core";
+import { TextField, Grid } from "@material-ui/core";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
 import AdjustOutlinedIcon from "@material-ui/icons/AdjustOutlined";
@@ -42,31 +39,10 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     color: "gray",
   },
-  padding1: {
-    paddingTop: 15,
-    paddingLeft: 80,
-    paddingRight: 70,
-  },
   text: {
-    fontSize: theme.typography.pxToRem(23),
+    fontSize: theme.typography.pxToRem(20),
     // flexBasis: "50%",
     marginTop: 10,
-  },
-  topcontent: {
-    paddingTop: 40,
-    paddingLeft: 30,
-    paddingRight: 30,
-    paddingBottom: 30,
-  },
-  topname: {
-    fontSize: theme.typography.pxToRem(25),
-    // flexBasis: "50%",
-    marginTop: 15,
-  },
-  padding2: {
-    paddingTop: 15,
-    paddingLeft: 30,
-    paddingRight: 10,
   },
 }));
 
@@ -88,56 +64,124 @@ export default function Career(props) {
       <CssBaseline />
       <Container fixed style={{ paddingBottom: 50 }}>
         <CRow>
-          <CCol sm="12" xl="12">
+          <CCol sm="12" md="12" xl="12">
             <CCard>
               <CCardBody>
                 <CFormGroup row>
-                  <CCol md="4">
+                  <CCol xs="12" md="12" xl="4">
                     <center>
-                      <img
-                       alt=" "
+                      {/* <img
+                        alt=" "
                         height={200}
                         weight={220}
                         src={`${process.env.PUBLIC_URL}/images/user2.png`}
+                      /> */}
+                      <img
+                        alt=" "
+                        src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
+                        style={{
+                          position: "relative",
+                          zIndex: 20,
+                          borderRadius: "50%",
+                          width: "200px",
+                          height: "200px",
+                          display: "block",
+                          objectFit: "cover",
+                          transition: "all 0.3s ease",
+                        }}
                       />
                     </center>
                   </CCol>
 
-                  <CCol xs="12" md="8">
+                  <CCol xs="12" md="12" xl="8">
                     <h1>Sarayut Test</h1>
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          Job Group : HR
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            JOB GROUP:
+                          </div>{" "}
+                          HR
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Sub Job Group : HR BP
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            SUB JOB GROUP:
+                          </div>{" "}
+                          BP
                         </Typography>
                       </CCol>
                     </CRow>
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          Department : HR TPE
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            DEPARTMENT:
+                          </div>{" "}
+                          HR TPE
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Section : HR
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            SECTION:
+                          </div>{" "}
+                          HR
                         </Typography>
                       </CCol>
                     </CRow>
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          PL : Ml
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            PL:
+                          </div>{" "}
+                          Ml
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Salary : 82000
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            SALARY:
+                          </div>{" "}
+                          82000
                         </Typography>
                       </CCol>
                     </CRow>
@@ -152,16 +196,29 @@ export default function Career(props) {
               </CCardHeader>
               <CCardBody>
                 <div className={classes.root}>
-                  <Grid container className={classes.padding1}>
+                  <CCol>
+                  <Grid container>
                     {/* test */}
                     {edit.map((name, index) => (
-                      <Grid container spacing={3} className={classes.padding1}>
-                        <Grid item xs={4} lg={4}>
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} lg={12}>
+                          <CButton
+                            color="outline-success"
+                            className="my-2 my-sm-0"
+                            type="submit"
+                            size="l"
+                            disabled
+                            style={{fontSize: "20px"}}
+                          >
+                            {index + 1} Career Inspiration
+                          </CButton>
+                        </Grid>
+                        <Grid item xs={12} lg={4}>
                           <Typography className={classes.text}>
-                            {index + 1}. Job Family
+                            <div style={{ fontWeight: "bold", color: "GrayText" }}>Job Family</div>
                           </Typography>
                         </Grid>
-                        <Grid item xs={8} lg={8}>
+                        <Grid item xs={12} lg={8}>
                           <TextField
                             id="outlined-basic"
                             size="small"
@@ -170,12 +227,12 @@ export default function Career(props) {
                           />
                         </Grid>
 
-                        <Grid item xs={4} lg={4}>
+                        <Grid item xs={12} lg={4}>
                           <Typography className={classes.text}>
-                            {index + 1}. Position
+                            <div style={{ fontWeight: "bold", color: "GrayText" }}>Position</div>
                           </Typography>
                         </Grid>
-                        <Grid item xs={8} lg={8}>
+                        <Grid item xs={12} lg={8}>
                           <TextField
                             id="outlined-basic"
                             size="small"
@@ -184,12 +241,12 @@ export default function Career(props) {
                           />
                         </Grid>
 
-                        <Grid item xs={4} lg={4}>
+                        <Grid item xs={12} lg={4}>
                           <Typography className={classes.text}>
-                            {index + 1}. Reason
+                            <div style={{ fontWeight: "bold", color: "GrayText" }}>Reason</div>
                           </Typography>
                         </Grid>
-                        <Grid item xs={8} lg={8}>
+                        <Grid item xs={12} lg={8}>
                           <TextField
                             id="outlined-basic"
                             multiline
@@ -206,7 +263,6 @@ export default function Career(props) {
                       direction="row"
                       justify="flex-end"
                       alignItems="center"
-                      className={classes.padding1}
                     >
                       <AddCircleOutlineIcon
                         onClick={() => addBox()}
@@ -214,7 +270,7 @@ export default function Career(props) {
                         color="action"
                       ></AddCircleOutlineIcon>
                     </Grid>
-                  </Grid>
+                  </Grid></CCol>
                 </div>
 
                 <CCardFooter>

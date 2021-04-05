@@ -17,13 +17,7 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 import PropTypes from "prop-types";
 import { CardActions } from "@material-ui/core";
 
-import {
-  CCard,
-  CCardBody,
-  CCol,
-  CRow,
-  CFormGroup,
-} from "@coreui/react";
+import { CCard, CCardBody, CCol, CRow, CFormGroup } from "@coreui/react";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -270,16 +264,22 @@ export default function EmployeeUpdate(props) {
                   <CCol md="4">
                     <center>
                       <img
-                       alt=" "
-                        height={180}
-                        weight={200}
-                        src={`${process.env.PUBLIC_URL}/images/user2.png`}
+                        alt=" "
+                        src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
+                        style={{
+                          position: "relative",
+                          zIndex: 20,
+                          borderRadius: "50%",
+                          width: "200px",
+                          height: "200px",
+                          display: "block",
+                          objectFit: "cover",
+                          transition: "all 0.3s ease",
+                        }}
                       />
 
                       <CCol>
-                        <h2>
-                          0090-100844
-                        </h2>
+                        <h2>0090-100844</h2>
                       </CCol>
                     </center>
                   </CCol>
@@ -289,24 +289,36 @@ export default function EmployeeUpdate(props) {
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          Department: HR
+                          <div style={{ color: "gray", display: "inline", fontWeight: "bold" }}>
+                            DEPARTMENT:
+                          </div>{" "}
+                          HR
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Section : HR BP
+                          <div style={{ color: "gray", display: "inline", fontWeight: "bold" }}>
+                            SECTION:
+                          </div>{" "}
+                          HR BP
                         </Typography>
                       </CCol>
                     </CRow>
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          Position : HR
+                          <div style={{ color: "gray", display: "inline", fontWeight: "bold" }}>
+                            POSITION:
+                          </div>{" "}
+                          HR
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          PL : S4
+                          <div style={{ color: "gray", display: "inline", fontWeight: "bold" }}>
+                            PL:
+                          </div>{" "}
+                          S4
                         </Typography>
                       </CCol>
                     </CRow>

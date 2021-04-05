@@ -189,7 +189,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EmployeeList() {
+export default function EmployeeList(props) {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
@@ -227,12 +227,12 @@ export default function EmployeeList() {
     <React.Fragment>
       <CssBaseline />
       <div className={classes.root}>
-        <Typography align="center" variant="h3" style={{ paddingBottom: 30 }}>
+        {/* <Typography align="center" variant="h3" style={{ paddingBottom: 30 }}>
           Employee Lists
-        </Typography>
+        </Typography> */}
 
         <CRow>
-          <CCol xs="3" md="3">
+          <CCol xs="12" md="12" lg="3">
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>Filter</CCardHeader>
               <CCardBody>
@@ -249,7 +249,7 @@ export default function EmployeeList() {
             </CCard>
           </CCol>
 
-          <CCol xl={9}>
+          <CCol xs="12" md="12" lg="9">
             <Paper className={classes.paper}>
               <TableContainer>
                 <Table
@@ -330,8 +330,11 @@ export default function EmployeeList() {
                                   className="my-2 my-sm-0"
                                   type="submit"
                                   size="m"
+                                  onClick={() =>
+                                    props.history.push("/employeeupdate")
+                                  }
                                 >
-                                  View Details
+                                  View Update
                                 </CButton>
                               </Box>
                             </TableCell>

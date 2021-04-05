@@ -57,6 +57,7 @@ import ShowData from "./views/ShowData/ShowData";
 import clsx from "clsx";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import { login } from "./actions/login.action";
 
 const drawerWidth = 290;
 
@@ -99,6 +100,43 @@ const useStyles = makeStyles((theme) => ({
 
 export default function App() {
   const classes = useStyles();
+
+  const loginReducer = useSelector(({ loginReducer }) => loginReducer);
+
+  const PrivateRoute = ({ type, component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={(props) =>
+        loginReducer.userType ? (
+          loginReducer.userType === type ||
+          (loginReducer.userType === "1" && type === "1&2") ||
+          (loginReducer.userType === "2" && type === "1&2") ? (
+            <Component
+              {...props}
+              // loginAuth={loginAuth}
+              // setMenuSelected={setMenuSelected}
+            />
+          ) : (
+            // history.goBack()
+            <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: props.location },
+              }}
+            />
+          )
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: props.location },
+            }}
+          />
+        )
+      }
+    />
+  );
+
   const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const handleDrawerClose = () => {
@@ -109,25 +147,23 @@ export default function App() {
     setOpenDrawer(!openDrawer);
   };
 
-  const loginReducer = useSelector(({ loginReducer }) => loginReducer);
-
   return (
     <Router>
-      {/* {loginReducer.result && (
+      {loginReducer.result && (
         <Header open={openDrawer} handleDrawerOpen={handleDrawerOpen} />
       )}
       {loginReducer.result && (
         <Menu open={openDrawer} handleDrawerClose={handleDrawerClose} />
-      )} */}
+      )}
 
-      <Header open={openDrawer} handleDrawerOpen={handleDrawerOpen} />
+      {/* <Header open={openDrawer} handleDrawerOpen={handleDrawerOpen} />
 
-      <Menu open={openDrawer} handleDrawerClose={handleDrawerClose} />
+      <Menu open={openDrawer} handleDrawerClose={handleDrawerClose} /> */}
 
       <div className={classes.drawerHeader} />
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: openDrawer,
+          [classes.contentShift]: openDrawer && loginReducer.result,
         })}
       >
         <Container style={{ display: "flex", justifyContent: "center" }}>
@@ -142,59 +178,129 @@ export default function App() {
             />
 
             {/* AddEmployee */}
-            <Route path="/addemployee" component={AddEmployee} />
+            <PrivateRoute
+              type="3"
+              path="/addemployee"
+              component={AddEmployee}
+            />
 
             {/* EmployeeProfile */}
-            <Route path="/profile/:id" component={EmployeeProfile} />
+            <PrivateRoute
+              type="3"
+              path="/profile/:id"
+              component={EmployeeProfile}
+            />
 
             {/* Adjust */}
-            <Route path="/keyaddition" component={KeyAddition} />
+            <PrivateRoute
+              type="3"
+              path="/keyaddition"
+              component={KeyAddition}
+            />
 
             {/* career */}
-            <Route path="/career" component={Career} />
-            <Route path="/careervisualize" component={CareerVisualize} />
-            <Route path="/careermonitor" component={CareerMonitor} />
-            <Route path="/dialogue" component={Dialogue} />
-            <Route path="/bosssuggestcareer" component={BossSuggestCareer} />
-            <Route path="/careermove" component={CareerMove} />
-            <Route path="/summarydialogue" component={SummaryDialogue} />
-            <Route
+            <PrivateRoute type="1&2" path="/career" component={Career} />
+            <PrivateRoute
+              type="1"
+              path="/careervisualize"
+              component={CareerVisualize}
+            />
+            <PrivateRoute
+              type="2"
+              path="/careermonitor"
+              component={CareerMonitor}
+            />
+            <PrivateRoute type="1" path="/dialogue" component={Dialogue} />
+            <PrivateRoute
+              type="2"
+              path="/bosssuggestcareer"
+              component={BossSuggestCareer}
+            />
+            <PrivateRoute type="2" path="/careermove" component={CareerMove} />
+            <PrivateRoute
+              type="1"
+              path="/summarydialogue"
+              component={SummaryDialogue}
+            />
+            <PrivateRoute
+              type="1"
               path="/nextcareersuggestion"
               component={NextCareerSuggestion}
             />
-            <Route path="/listposition" component={ListPosition} />
-            <Route path="/myteam" component={MyTeam} />
-            <Route path="/careerroadmap" component={CareerRoadmap} />
+            <PrivateRoute
+              type="2"
+              path="/listposition"
+              component={ListPosition}
+            />
+            <PrivateRoute type="2" path="/myteam" component={MyTeam} />
+            <PrivateRoute
+              type="1"
+              path="/careerroadmap"
+              component={CareerRoadmap}
+            />
 
             {/* EmployeeData */}
-            <Route path="/employeeupdate" component={EmployeeUpdate} />
-            <Route path="/employeelist" component={EmployeeList} />
+            <PrivateRoute
+              type="3"
+              path="/employeeupdate"
+              component={EmployeeUpdate}
+            />
+            <PrivateRoute
+              type="3"
+              path="/employeelist"
+              component={EmployeeList}
+            />
 
             {/* Hiring */}
-            <Route path="/recruit" component={Recruit} />
-            <Route path="/application" component={Application} />
-            <Route path="/jobdetails" component={JobDetails} />
-            <Route path="/candidatedetails" component={CandidateDetails} />
-            <Route path="/jobvacancycreate" component={JobVacancyCreate} />
-            <Route path="/jobvacancylists" component={JobVacancyLists} />
-            <Route path="/jobvacancysave" component={JobVacancySave} />
-            <Route path="/jobvacancyapply" component={JobVacancyApply} />
-            <Route
+            <PrivateRoute type="3" path="/recruit" component={Recruit} />
+            <PrivateRoute
+              type="2"
+              path="/application"
+              component={Application}
+            />
+            <PrivateRoute type="1" path="/jobdetails" component={JobDetails} />
+            <PrivateRoute
+              type="3"
+              path="/candidatedetails"
+              component={CandidateDetails}
+            />
+            <PrivateRoute
+              type="3"
+              path="/jobvacancycreate"
+              component={JobVacancyCreate}
+            />
+            <PrivateRoute
+              type="1"
+              path="/jobvacancylists"
+              component={JobVacancyLists}
+            />
+            <PrivateRoute
+              type="1"
+              path="/jobvacancysave"
+              component={JobVacancySave}
+            />
+            <PrivateRoute
+              type="1"
+              path="/jobvacancyapply"
+              component={JobVacancyApply}
+            />
+            <PrivateRoute
+              type="3"
               path="/jobvacancylistsadmin"
               component={JobVacancyListsAdmin}
             />
-            <Route
+            <PrivateRoute
+              type="3"
               path="/jobvacancyapplyadmin"
               component={JobVacancyApplyAdmin}
             />
 
             {/* Directory */}
-            <Route path="/directory" component={Directory} />
+            <PrivateRoute type="1" path="/directory" component={Directory} />
 
             {/* ShowData */}
-            <Route path="/showdata" component={ShowData} />
-            
-            
+            <PrivateRoute type="3" path="/showdata" component={ShowData} />
+
             {/* 
            ของเก่า 
             <Route path="/export" component={Export} />

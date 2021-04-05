@@ -51,8 +51,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function JobVacancyListsAdmin() {
+export default function JobVacancyListsAdmin(props) {
   const classes = useStyles();
+
+  const [dataList, setDataList] = React.useState([
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+  ]);
 
   return (
     <React.Fragment>
@@ -65,251 +100,97 @@ export default function JobVacancyListsAdmin() {
         <CRow>
           <CCol sm="12" xl="12" style={{ fontSize: 20 }}>
             <CCard>
-              <CCardHeader style={{ fontSize: 25 }}>Job Vacancy Lists</CCardHeader>
+              <CCardHeader style={{ fontSize: 25 }}>
+                Job Vacancy Lists
+              </CCardHeader>
               <CCardBody>
-                <CFormGroup row>
-                  <div className="careerfy-employer careerfy-employer-list">
-                    <div className="careerfy-column-12">
-                      <div className="careerfy-table-layer">
-                        <div className="careerfy-table-row">
-                          <div className="careerfy-table-cell">
-                            <figure style={{paddingRight: "25px"}}>
-                              <a href="# ">
-                                <img
-                                  src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
-                                  alt=" "
-                                />
+                {dataList.map((value) => (
+                  <CFormGroup row>
+                    <div className="careerfy-employer careerfy-employer-list">
+                      <div className="careerfy-column-12">
+                        <div className="careerfy-table-layer">
+                          <div className="careerfy-table-row">
+                            <div className="careerfy-table-cell">
+                              <figure style={{ paddingRight: "25px" }}>
+                                <a
+                                  href="# "
+                                  className="careerfy-applied-jobs-thumb"
+                                >
+                                  <img
+                                    style={{
+                                      maxWidth: "100%",
+                                      maxHeight: "100%",
+                                    }}
+                                    src={value.img}
+                                    alt=" "
+                                  />
+                                </a>
+                              </figure>
+                              <h2 style={{ fontSize: "25px" }}>{value.job}</h2>
+                              <span style={{ fontSize: "15px" }}>
+                                {value.jobFam} | {value.subJobFam}
+                              </span>
+                            </div>
+                            <div className="careerfy-table-cell">
+                              <ul className="careerfy-employer-thumblist">
+                                <li>
+                                  <a href="# ">
+                                    <img
+                                      alt=" "
+                                      src="/images/avatars/avatar_1.png"
+                                    />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="# ">
+                                    <img
+                                      alt=" "
+                                      src="/images/avatars/avatar_2.png"
+                                    />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="# ">
+                                    <img
+                                      alt=" "
+                                      src="/images/avatars/avatar_3.png"
+                                    />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="# ">
+                                    <img
+                                      alt=" "
+                                      src="/images/avatars/avatar_4.png"
+                                    />
+                                  </a>
+                                </li>
+                              </ul>
+                              <a
+                                href="# "
+                                className="careerfy-employer-thumblist-size"
+                              >
+                                +3 people apply
                               </a>
-                            </figure>
-                            <h2 style={{ fontSize: "25px" }}>Programmer</h2>
-                            <span style={{ fontSize: "15px" }}>
-                              Job Family | Sub Job Family
-                            </span>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            <ul className="careerfy-employer-thumblist">
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_1.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_2.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_3.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_4.png" />
-                                </a>
-                              </li>
-                            </ul>
-                            <a
-                              href="# "
-                              className="careerfy-employer-thumblist-size"
-                            >
-                              +3 people apply
-                            </a>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            {" "}
-                            <a href="# " className="careerfy-employer-list-btn">
-                              6 vacancies
-                            </a>{" "}
+                            </div>
+                            <div className="careerfy-table-cell">
+                              {" "}
+                              <a
+                                href="# "
+                                className="careerfy-employer-list-btn"
+                                onClick={() =>
+                                  props.history.push("/jobvacancyapplyadmin")
+                                }
+                              >
+                                6 vacancies
+                              </a>{" "}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </CFormGroup>
-
-                <CFormGroup row>
-                  <div className="careerfy-employer careerfy-employer-list">
-                    <div className="careerfy-column-12">
-                      <div className="careerfy-table-layer">
-                        <div className="careerfy-table-row">
-                          <div className="careerfy-table-cell">
-                            <figure style={{paddingRight: "25px"}}>
-                              <a href="# ">
-                                <img
-                                  src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
-                                  alt=" "
-                                />
-                              </a>
-                            </figure>
-                            <h2 style={{ fontSize: "25px" }}>Programmer</h2>
-                            <span style={{ fontSize: "15px" }}>
-                              Job Family | Sub Job Family
-                            </span>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            <ul className="careerfy-employer-thumblist">
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_1.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_2.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_3.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_4.png" />
-                                </a>
-                              </li>
-                            </ul>
-                            <a
-                              href="# "
-                              className="careerfy-employer-thumblist-size"
-                            >
-                              +3 people apply
-                            </a>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            {" "}
-                            <a href="# " className="careerfy-employer-list-btn">
-                              6 vacancies
-                            </a>{" "}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CFormGroup>
-
-                <CFormGroup row>
-                  <div className="careerfy-employer careerfy-employer-list">
-                    <div className="careerfy-column-12">
-                      <div className="careerfy-table-layer">
-                        <div className="careerfy-table-row">
-                          <div className="careerfy-table-cell">
-                            <figure style={{paddingRight: "25px"}}>
-                              <a href="# ">
-                                <img
-                                  src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
-                                  alt
-                                />
-                              </a>
-                            </figure>
-                            <h2 style={{ fontSize: "25px" }}>Programmer</h2>
-                            <span style={{ fontSize: "15px" }}>
-                              Job Family | Sub Job Family
-                            </span>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            <ul className="careerfy-employer-thumblist">
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_1.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_2.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_3.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_4.png" />
-                                </a>
-                              </li>
-                            </ul>
-                            <a
-                              href="# "
-                              className="careerfy-employer-thumblist-size"
-                            >
-                              +3 people apply
-                            </a>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            {" "}
-                            <a href="# " className="careerfy-employer-list-btn">
-                              6 vacancies
-                            </a>{" "}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CFormGroup>
-
-                <CFormGroup row>
-                  <div className="careerfy-employer careerfy-employer-list">
-                    <div className="careerfy-column-12">
-                      <div className="careerfy-table-layer">
-                        <div className="careerfy-table-row">
-                          <div className="careerfy-table-cell">
-                            <figure style={{paddingRight: "25px"}}>
-                              <a href="# ">
-                                <img
-                                  src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
-                                  alt=" "
-                                />
-                              </a>
-                            </figure>
-                            <h2 style={{ fontSize: "25px" }}>Programmer</h2>
-                            <span style={{ fontSize: "15px" }}>
-                              Job Family | Sub Job Family
-                            </span>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            <ul className="careerfy-employer-thumblist">
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_1.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_2.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_3.png" />
-                                </a>
-                              </li>
-                              <li>
-                                <a href="# ">
-                                  <img alt=" " src="/images/avatars/avatar_4.png" />
-                                </a>
-                              </li>
-                            </ul>
-                            <a
-                              href="# "
-                              className="careerfy-employer-thumblist-size"
-                            >
-                              +3 people apply
-                            </a>
-                          </div>
-                          <div className="careerfy-table-cell">
-                            {" "}
-                            <a href="# " className="careerfy-employer-list-btn">
-                              6 vacancies
-                            </a>{" "}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CFormGroup>
+                  </CFormGroup>
+                ))}
               </CCardBody>
             </CCard>
           </CCol>

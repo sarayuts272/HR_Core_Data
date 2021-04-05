@@ -4,7 +4,9 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-
+import StarRateIcon from "@material-ui/icons/StarRate";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import DateRangeIcon from "@material-ui/icons/DateRange";
 
 import SearchIcon from "@material-ui/icons/Search";
 import VisibilityIcon from "@material-ui/icons/Visibility";
@@ -57,8 +59,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function JobVacancyApply() {
+export default function JobVacancyApply(props) {
   const classes = useStyles();
+
+  const [dataList, setDataList] = React.useState([
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+  ]);
 
   return (
     <React.Fragment>
@@ -73,249 +110,102 @@ export default function JobVacancyApply() {
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>
                 <CRow>
-                  <CCol lg={7} style={{display: "flex"}}>Applied Jobs</CCol>
-                  <CCol lg={5} style={{display: "flex"}}>
-                      <CInput className="mr-sm-2" placeholder="Search Orders" />
-                    
-                      <CButton
-                        color="outline-success"
-                        className="my-2 my-sm-0"
-                        type="submit"
-                        size="sm"
-                      >
-                        <SearchIcon />
-                      </CButton>
+                  <CCol lg={7} style={{ display: "flex" }}>
+                    Applied Job
+                  </CCol>
+                  <CCol lg={5} style={{ display: "flex" }}>
+                    <CInput className="mr-sm-2" placeholder="Search Orders" />
+
+                    <CButton
+                      color="outline-success"
+                      className="my-2 my-sm-0"
+                      type="submit"
+                      size="sm"
+                    >
+                      <SearchIcon />
+                    </CButton>
                   </CCol>
                 </CRow>
               </CCardHeader>
               <CCardBody>
-                <div className="careerfy-typo-wrap">
-                  <div className="careerfy-applied-jobs">
-                    <ul className="careerfy-column-12">
-                      <div className="careerfy-applied-jobs-wrap">
-                        <a href="# " className="careerfy-applied-jobs-thumb">
-                          <img
-                           alt=" "
-                            style={{
-                              maxWidth: "100%",
-                              maxHeight: "100%",
-                            }}
-                            src="/images/avatars/avatar_2.png"
-                            alt=" "
-                          />
-                        </a>
-                        <div
-                          className="careerfy-applied-jobs-text"
-                          style={{ paddingLeft: "50px", alignSelf: "center" }}
-                        >
-                          <div className="careerfy-applied-jobs-left">
-                            <h2>HR</h2>
-                            <ul>
-                              <li>Job Family</li>
-                              <li>Sub Job Family</li>
-                              <li>
-                                <i className="fa fa-map-marker" /> Rayong
-                              </li>
-
-                              <li>
-                                <i className="careerfy-icon careerfy-calendar" />{" "}
-                                Sep 26, 2017
-                              </li>
-                            </ul>
-                          </div>
-                          <a className="careerfy-savedjobs-links">
-                            <Box
-                              display="flex"
-                              flexDirection="row"
-                              paddingLeft={5}
-                              justifyContent="center"
-                            >
-                              <CButton
-                                color="outline-success"
-                                className="my-2 my-sm-0"
-                                type="submit"
-                                size="m"
-                              >
-                                <VisibilityIcon />
-                              </CButton>
-                            </Box>
+                {dataList.map((value) => (
+                  <div className="careerfy-typo-wrap">
+                    <div className="careerfy-applied-jobs">
+                      <ul className="careerfy-column-12">
+                        <div className="careerfy-applied-jobs-wrap">
+                          <a href="# " className="careerfy-applied-jobs-thumb">
+                            <img
+                              alt=" "
+                              style={{
+                                maxWidth: "100%",
+                                maxHeight: "100%",
+                              }}
+                              src={value.img}
+                              alt=" "
+                            />
                           </a>
-                        </div>
-                      </div>
-                    </ul>
-                  </div>
-                </div>
+                          <div
+                            className="careerfy-applied-jobs-text"
+                            style={{ paddingLeft: "50px", alignSelf: "center" }}
+                          >
+                            <div className="careerfy-applied-jobs-left">
+                              <h2>{value.job}</h2>
+                              <ul>
+                                <li>
+                                  <i>
+                                    <StarRateIcon />
+                                  </i>{" "}
+                                  {value.jobFam}
+                                </li>
+                                <li>
+                                  <i>
+                                    <StarRateIcon />
+                                  </i>{" "}
+                                  {value.subJobFam}
+                                </li>
+                                <li>
+                                  <i>
+                                    <LocationOnIcon />
+                                  </i>
+                                  {value.prov}
+                                </li>
 
-                <div className="careerfy-typo-wrap">
-                  <div className="careerfy-applied-jobs">
-                    <ul className="careerfy-column-12">
-                      <div className="careerfy-applied-jobs-wrap">
-                        <a href="# " className="careerfy-applied-jobs-thumb">
-                          <img
-                           alt=" "
-                            style={{
-                              maxWidth: "100%",
-                              maxHeight: "100%",
-                            }}
-                            src="/images/avatars/avatar_1.png"
-                            alt=" "
-                          />
-                        </a>
-                        <div
-                          className="careerfy-applied-jobs-text"
-                          style={{ paddingLeft: "50px" }}
-                        >
-                          <div className="careerfy-applied-jobs-left">
-                            <h2>Programmer</h2>
-                            <ul>
-                              <li>Job Family</li>
-                              <li>Sub Job Family</li>
-                              <li>
-                                <i className="fa fa-map-marker" /> Bangkok
-                              </li>
-
-                              <li>
-                                <i className="careerfy-icon careerfy-calendar" />{" "}
-                                Sep 26, 2017
-                              </li>
-                            </ul>
-                          </div>
-                          <a className="careerfy-savedjobs-links">
-                            <Box
-                              display="flex"
-                              flexDirection="row"
-                              paddingLeft={5}
-                              justifyContent="center"
-                            >
-                              <CButton
-                                color="outline-success"
-                                className="my-2 my-sm-0"
-                                type="submit"
-                                size="m"
+                                <div>
+                                  <li>
+                                    <i>
+                                      <DateRangeIcon />
+                                    </i>
+                                    {value.date}
+                                  </li>
+                                </div>
+                              </ul>
+                            </div>
+                            <a className="careerfy-savedjobs-links">
+                              <Box
+                                display="flex"
+                                flexDirection="row"
+                                paddingLeft={5}
+                                justifyContent="center"
                               >
-                                <VisibilityIcon />
-                              </CButton>
-                            </Box>
-                          </a>
-                        </div>
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="careerfy-typo-wrap">
-                  <div className="careerfy-applied-jobs">
-                    <ul className="careerfy-column-12">
-                      <div className="careerfy-applied-jobs-wrap">
-                        <a href="# " className="careerfy-applied-jobs-thumb">
-                          <img
-                           alt=" "
-                            style={{
-                              maxWidth: "100%",
-                              maxHeight: "100%",
-                            }}
-                            src="/images/avatars/avatar_3.png"
-                            alt=" "
-                          />
-                        </a>
-                        <div
-                          className="careerfy-applied-jobs-text"
-                          style={{ paddingLeft: "50px" }}
-                        >
-                          <div className="careerfy-applied-jobs-left">
-                            <h2>Programmer</h2>
-                            <ul>
-                              <li>Job Family</li>
-                              <li>Sub Job Family</li>
-                              <li>
-                                <i className="fa fa-map-marker" /> Rayong
-                              </li>
-
-                              <li>
-                                <i className="careerfy-icon careerfy-calendar" />{" "}
-                                Sep 26, 2017
-                              </li>
-                            </ul>
+                                <CButton
+                                  color="outline-success"
+                                  className="my-2 my-sm-0"
+                                  type="submit"
+                                  size="m"
+                                  onClick={() =>
+                                    props.history.push("/jobdetails")
+                                  }
+                                >
+                                  View Detail
+                                </CButton>
+                              </Box>
+                            </a>
                           </div>
-                          <a className="careerfy-savedjobs-links">
-                            <Box
-                              display="flex"
-                              flexDirection="row"
-                              paddingLeft={5}
-                              justifyContent="center"
-                            >
-                              <CButton
-                                color="outline-success"
-                                className="my-2 my-sm-0"
-                                type="submit"
-                                size="m"
-                              >
-                                <VisibilityIcon />
-                              </CButton>
-                            </Box>
-                          </a>
                         </div>
-                      </div>
-                    </ul>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-
-                <div className="careerfy-typo-wrap">
-                  <div className="careerfy-applied-jobs">
-                    <ul className="careerfy-column-12">
-                      <div className="careerfy-applied-jobs-wrap">
-                        <a href="# " className="careerfy-applied-jobs-thumb">
-                          <img
-                           alt=" "
-                            style={{
-                              maxWidth: "100%",
-                              maxHeight: "100%",
-                            }}
-                            src="/images/avatars/avatar_4.png"
-                            alt=" "
-                          />
-                        </a>
-                        <div
-                          className="careerfy-applied-jobs-text"
-                          style={{ paddingLeft: "50px" }}
-                        >
-                          <div className="careerfy-applied-jobs-left">
-                            <h2>HR</h2>
-                            <ul>
-                              <li>Job Family</li>
-                              <li>Sub Job Family</li>
-                              <li>
-                                <i className="fa fa-map-marker" /> Rayong
-                              </li>
-
-                              <li>
-                                <i className="careerfy-icon careerfy-calendar" />{" "}
-                                Sep 26, 2017
-                              </li>
-                            </ul>
-                          </div>
-                          <a className="careerfy-savedjobs-links">
-                            <Box
-                              display="flex"
-                              flexDirection="row"
-                              paddingLeft={5}
-                              justifyContent="center"
-                            >
-                              <CButton
-                                color="outline-success"
-                                className="my-2 my-sm-0"
-                                type="submit"
-                                size="m"
-                              >
-                                <VisibilityIcon />
-                              </CButton>
-                            </Box>
-                          </a>
-                        </div>
-                      </div>
-                    </ul>
-                  </div>
-                </div>
+                ))}
               </CCardBody>
             </CCard>
           </CCol>

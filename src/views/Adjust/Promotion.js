@@ -117,115 +117,120 @@ export default function Promotion() {
         <CRow>
           <CCol sm="12" xl="12">
             <CFormGroup row>
-              
               <Container>
                 <div className={classes.root}>
-                    <Grid container spacing={3} className={classes.padding1}>
-                      <Grid item xs={4} lg={4}>
-                        <Typography className={classes.text}>
+                  <Grid container spacing={3} className={classes.padding1}>
+                    <Grid item xs={12} md={12} lg={4}>
+                      <Typography className={classes.text}>
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
                           Effective Date
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={8} lg={8}>
-                        <CSelect
-                          custom
-                          name="select"
-                          id="select"
-                          onChange={handleAdjust}
-                        >
-                          <option value="0">Please select</option>
-                          <option value="1">Transfer In</option>
-                          <option value="2">Transfer Out</option>
-                          <option value="3">Probation **** ยังไม่มี</option>
-                          <option value="4">Promotion</option>
-                          <option value="5">Secondment **** ยังไม่มี</option>
-                          <option value="6">Payment Change</option>
-                          <option value="7">Terminate</option>
-                        </CSelect>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container spacing={3} className={classes.padding1}>
-                      <Grid item xs={4} lg={4}>
-                        <Typography className={classes.text}>Reason</Typography>
-                      </Grid>
-                      <Grid item xs={8} lg={8}>
-                        <CSelect
-                          custom
-                          name="select"
-                          id="select"
-                          onChange={handleAdjust}
-                        >
-                          <option value="0">Please select</option>
-                          <option value="1">Transfer In</option>
-                          <option value="2">Transfer Out</option>
-                          <option value="3">Probation **** ยังไม่มี</option>
-                          <option value="4">Promotion</option>
-                          <option value="5">Secondment **** ยังไม่มี</option>
-                          <option value="6">Payment Change</option>
-                          <option value="7">Terminate</option>
-                        </CSelect>
-                      </Grid>
-
-                      <Grid item xs={12} lg={12}>
-                        <CTextarea
-                          name="textarea-input"
-                          id="textarea-input"
-                          rows="4"
-                          placeholder="Content..."
-                          style={{ resize: "none" }}
-                        />
-                      </Grid>
-                    </Grid>
-
-                    <Grid container spacing={3} className={classes.padding1}>
-                      <Grid item xs={4} lg={12}>
-                        <Typography className={classes.text}>
-                          Adjust Payment
-                        </Typography>
-                      </Grid>
-                      <Grid
-                        item
-                        xs={8}
-                        lg={12}
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
-                        <div>
-                          <CCol
-                            className={classes.heading3}
-                          >
-                            <CFormGroup variant="custom-radio" inline>
-                              <CInputRadio
-                                custom
-                                id="inline-radio1"
-                                name="inline-radios"
-                                value="option1"
-                              />
-                              <CLabel
-                                variant="custom-checkbox"
-                                htmlFor="inline-radio1"
-                              >
-                                Yes
-                              </CLabel>
-                            </CFormGroup>
-                            <CFormGroup variant="custom-radio" inline>
-                              <CInputRadio
-                                custom
-                                id="inline-radio2"
-                                name="inline-radios"
-                                value="option2"
-                              />
-                              <CLabel
-                                variant="custom-checkbox"
-                                htmlFor="inline-radio2"
-                              >
-                                No
-                              </CLabel>
-                            </CFormGroup>
-                          </CCol>
                         </div>
-                      </Grid>
+                      </Typography>
                     </Grid>
+                    <Grid item xs={12} md={12} lg={8}>
+                      <CSelect
+                        custom
+                        name="select"
+                        id="select"
+                        onChange={handleAdjust}
+                      >
+                        <option value="0">Please select</option>
+                        <option value="1">Transfer In</option>
+                        <option value="2">Transfer Out</option>
+                        <option value="3">Probation **** ยังไม่มี</option>
+                        <option value="4">Promotion</option>
+                        <option value="5">Secondment **** ยังไม่มี</option>
+                        <option value="6">Payment Change</option>
+                        <option value="7">Terminate</option>
+                      </CSelect>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container spacing={3} className={classes.padding1}>
+                    <Grid item xs={12} md={12} lg={4}>
+                      <Typography className={classes.text}>
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Reason
+                        </div>
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={12} lg={8}>
+                      <CSelect
+                        custom
+                        name="select"
+                        id="select"
+                        onChange={handleAdjust}
+                      >
+                        <option value="0">Please select</option>
+                        <option value="1">Transfer In</option>
+                        <option value="2">Transfer Out</option>
+                        <option value="3">Probation **** ยังไม่มี</option>
+                        <option value="4">Promotion</option>
+                        <option value="5">Secondment **** ยังไม่มี</option>
+                        <option value="6">Payment Change</option>
+                        <option value="7">Terminate</option>
+                      </CSelect>
+                    </Grid>
+
+                    <Grid item xs={12} lg={12}>
+                      <CTextarea
+                        name="textarea-input"
+                        id="textarea-input"
+                        rows="4"
+                        placeholder="Content..."
+                        style={{ resize: "none" }}
+                      />
+                    </Grid>
+                  </Grid>
+
+                  <Grid container spacing={3} className={classes.padding1}>
+                    <Grid item xs={12} md={12} lg={4}>
+                      <Typography className={classes.text}>
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Adjust Payment
+                        </div>
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={8}
+                      lg={12}
+                      style={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <div>
+                        <CCol className={classes.heading3}>
+                          <CFormGroup variant="custom-radio" inline>
+                            <CInputRadio
+                              custom
+                              id="inline-radio1"
+                              name="inline-radios"
+                              value="option1"
+                            />
+                            <CLabel
+                              variant="custom-checkbox"
+                              htmlFor="inline-radio1"
+                            >
+                              Yes
+                            </CLabel>
+                          </CFormGroup>
+                          <CFormGroup variant="custom-radio" inline>
+                            <CInputRadio
+                              custom
+                              id="inline-radio2"
+                              name="inline-radios"
+                              value="option2"
+                            />
+                            <CLabel
+                              variant="custom-checkbox"
+                              htmlFor="inline-radio2"
+                            >
+                              No
+                            </CLabel>
+                          </CFormGroup>
+                        </CCol>
+                      </div>
+                    </Grid>
+                  </Grid>
                 </div>
               </Container>
             </CFormGroup>

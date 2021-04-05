@@ -81,7 +81,7 @@ export default function CustomizedTimeline() {
                 style={{ margin: "20px 0" }}
               >
                 <CardContent>
-                  <Typography
+                  {/* <Typography
                     inline
                     align="center"
                     variant="h4"
@@ -89,7 +89,7 @@ export default function CustomizedTimeline() {
                     style={{ textDecoration: "underline" }}
                   >
                     POSITION
-                  </Typography>
+                  </Typography> */}
 
                   <Typography
                     align="center"
@@ -99,21 +99,19 @@ export default function CustomizedTimeline() {
                     HR Manager
                   </Typography>
 
-                
-
                   {/* {index} */}
                 </CardContent>
               </Card>
               <Card className={classes.rootSubJobFamily} variant="outlined">
                 <CardContent>
-                <Typography
+                  {/* <Typography
                     align="center"
                     variant="h4"
                     className={classes.heading}
                     style={{ textDecoration: "underline" }}
                   >
                     JOB FAMILY
-                  </Typography>
+                  </Typography> */}
                   <Typography
                     align="center"
                     variant="h4"
@@ -121,15 +119,15 @@ export default function CustomizedTimeline() {
                   >
                     HR
                   </Typography>
-                  
-                  <Typography
+
+                  {/* <Typography
                     align="center"
                     variant="h4"
                     className={classes.heading}
                     style={{ textDecoration: "underline" }}
                   >
-                    SUB JOB FAMILY{" "}
-                  </Typography>
+                    SUB JOB FAMILY
+                  </Typography> */}
                   <Typography
                     align="center"
                     variant="h4"

@@ -13,8 +13,17 @@ import {
   CRow,
 } from "@coreui/react";
 
-
 export default function SummaryDialogue(props) {
+  const [strengthList, setStrengthList] = React.useState([
+    "Enthusiasm",
+    "Trustworthiness",
+    "Creativity",
+  ]);
+  const [weaknessList, setWeaknessList] = React.useState([
+    "Being too critical of yourself",
+    "Attempting to please everyone",
+    "Being unfamiliar with the latest software",
+  ]);
 
   return (
     <React.Fragment>
@@ -30,9 +39,9 @@ export default function SummaryDialogue(props) {
               <CCardHeader style={{ fontSize: 25 }}>Strength</CCardHeader>
               <CCardBody>
                 <CListGroup>
-                  <CListGroupItem>Enthusiasm</CListGroupItem>
-                  <CListGroupItem>Trustworthiness</CListGroupItem>
-                  <CListGroupItem>Creativity</CListGroupItem>
+                  {strengthList.map((value) => (
+                    <CListGroupItem>{value}</CListGroupItem>
+                  ))}
                 </CListGroup>
               </CCardBody>
             </CCard>
@@ -41,13 +50,9 @@ export default function SummaryDialogue(props) {
               <CCardHeader style={{ fontSize: 25 }}>Weakness</CCardHeader>
               <CCardBody>
                 <CListGroup>
-                  <CListGroupItem>
-                    Being too critical of yourself
-                  </CListGroupItem>
-                  <CListGroupItem>Attempting to please everyone</CListGroupItem>
-                  <CListGroupItem>
-                    Being unfamiliar with the latest software
-                  </CListGroupItem>
+                  {weaknessList.map((value) => (
+                    <CListGroupItem>{value}</CListGroupItem>
+                  ))}
                 </CListGroup>
               </CCardBody>
             </CCard>

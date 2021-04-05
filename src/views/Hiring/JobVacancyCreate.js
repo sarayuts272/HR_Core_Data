@@ -90,18 +90,18 @@ export default function JobVacancyCreate() {
               </CCardHeader>
               <CCardBody>
                 <CFormGroup row>
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
-                      <CCol lg={12}>
+                      <CCol  lg={12}>
                         <CLabel htmlFor="textarea-input">Job Position</CLabel>
                       </CCol>
-                      <CCol lg={9}>
+                      <CCol  xs="12" md="12" lg="9">
                         <CInput
                           className="mr-sm-2"
                           placeholder="Job Position"
                         />
                       </CCol>
-                      <CCol lg={3}>
+                      <CCol xs="12" md="12"  lg="3">
                         <CButton
                           color="outline-success"
                           className="my-2 my-sm-0"
@@ -115,7 +115,7 @@ export default function JobVacancyCreate() {
                     </CRow>
                   </CCol>
 
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
                       <CCol lg={12}>
                         <CLabel htmlFor="textarea-input">Job Group</CLabel>
@@ -139,7 +139,7 @@ export default function JobVacancyCreate() {
                   </CCol>
                 </CFormGroup>
                 <CFormGroup row>
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
                       <CCol lg={12}>
                         <CLabel htmlFor="textarea-input">Sub Job Group</CLabel>
@@ -162,7 +162,7 @@ export default function JobVacancyCreate() {
                     </CRow>
                   </CCol>
 
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
                       <CCol lg={12}>
                         <CLabel htmlFor="textarea-input">Location</CLabel>
@@ -187,7 +187,7 @@ export default function JobVacancyCreate() {
                 </CFormGroup>
 
                 <CFormGroup row>
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
                       <CCol lg={12}>
                         <CLabel htmlFor="textarea-input">Department</CLabel>
@@ -210,7 +210,7 @@ export default function JobVacancyCreate() {
                     </CRow>
                   </CCol>
 
-                  <CCol xs="6" md="6">
+                  <CCol xs="12" md="6">
                     <CRow>
                       <CCol lg={12}>
                         <CLabel htmlFor="textarea-input">Company</CLabel>

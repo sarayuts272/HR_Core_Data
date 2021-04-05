@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 15,
   },
   text: {
-    fontSize: theme.typography.pxToRem(23),
+    fontSize: theme.typography.pxToRem(20),
     // flexBasis: "50%",
     marginTop: 10,
   },
@@ -116,9 +116,9 @@ export default function KeyAddition() {
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>
                 <CForm inline>
-                  <CCol md="10">Key Searching </CCol>
+                  <CCol md="8" xl="10">Key Searching </CCol>
 
-                  <CCol md="2" xl className="mb-3 mb-xl-0">
+                  <CCol md="4" xl="2" className="mb-3 mb-xl-0">
                     <CButton active block color="light" aria-pressed="true">
                       import
                     </CButton>
@@ -127,12 +127,12 @@ export default function KeyAddition() {
               </CCardHeader>
               <CCardBody>
                 <CFormGroup row>
-                  <CCol xs="6" md="6">
+                  <CCol md="12" xl="6">
                     <CRow>
-                      <CCol lg={9}>
+                      <CCol md="12" xl="9">
                         <CInput className="mr-sm-2" placeholder="Employee ID" />
                       </CCol>
-                      <CCol lg={3}>
+                      <CCol md="12" xl="3">
                         <CButton
                           color="outline-success"
                           className="my-2 my-sm-0"
@@ -146,12 +146,12 @@ export default function KeyAddition() {
                     </CRow>
                   </CCol>
 
-                  <CCol xs="6" md="6">
+                  <CCol md="12" xl="6">
                     <CRow>
-                      <CCol lg={9}>
+                      <CCol md="12" xl="9">
                         <CInput className="mr-sm-2" placeholder="Name" />
                       </CCol>
-                      <CCol lg={3}>
+                      <CCol md="12" xl="3">
                         <CButton
                           color="outline-success"
                           className="my-2 my-sm-0"
@@ -166,12 +166,12 @@ export default function KeyAddition() {
                   </CCol>
                 </CFormGroup>
                 <CFormGroup row>
-                  <CCol xs="6" md="6">
+                  <CCol md="12" xl="6">
                     <CRow>
-                      <CCol lg={9}>
+                      <CCol md="12" xl="9">
                         <CInput className="mr-sm-2" placeholder="Department" />
                       </CCol>
-                      <CCol lg={3}>
+                      <CCol md="12" xl="3">
                         <CButton
                           color="outline-success"
                           className="my-2 my-sm-0"
@@ -185,12 +185,12 @@ export default function KeyAddition() {
                     </CRow>
                   </CCol>
 
-                  <CCol xs="6" md="6">
+                  <CCol md="12" xl="6">
                     <CRow>
-                      <CCol lg={9}>
+                      <CCol md="12" xl="9">
                         <CInput className="mr-sm-2" placeholder="Section" />
                       </CCol>
-                      <CCol lg={3}>
+                      <CCol md="12" xl="3">
                         <CButton
                           color="outline-success"
                           className="my-2 my-sm-0"
@@ -209,19 +209,26 @@ export default function KeyAddition() {
 
             <CCard>
               <CCardBody>
-                <CFormGroup row>
-                  <CCol md="4" style={{ alignSelf: "center" }}>
+                <CRow>
+                  <CCol md="12" xl="4" style={{ alignSelf: "center" }}>
                     <center>
                       <img
-                        height={200}
-                        weight={220}
                         alt=" "
-                        src={`${process.env.PUBLIC_URL}/images/user2.png`}
-                      />
-                    </center>
+                        src={`${process.env.PUBLIC_URL}/images/avatars/avatar_1.png`}
+                        style={{
+                          position: "relative",
+                          zIndex: 20,
+                          borderRadius: "50%",
+                          width: "200px",
+                          height: "200px",
+                          display: "block",
+                          objectFit: "cover",
+                          transition: "all 0.3s ease",
+                        }}
+                      /></center>
                   </CCol>
-
-                  <CCol xs="12" md="8">
+                  <CCol md="12" xl="8">
+                    <center></center>
                     <CRow>
                       <CCol>
                         {/* {keyAdditionProfile &&
@@ -240,34 +247,90 @@ export default function KeyAddition() {
                             })} */}
 
                         <Typography className={classes.text}>
-                          Name : Sarayut
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            NAME:
+                          </div>{" "}
+                          Sarayut
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          ID : HR BP
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            ID:
+                          </div>{" "}
+                          678954
                         </Typography>
                       </CCol>
                     </CRow>
                     <CRow>
                       <CCol>
                         <Typography className={classes.text}>
-                          Department : HR TPE
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            DEPARTMENT:
+                          </div>{" "}
+                          HR TPE
                         </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Section : HR
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            SECTION:
+                          </div>{" "}
+                          HR
                         </Typography>
                       </CCol>
                     </CRow>
                     <CRow>
                       <CCol>
-                        <Typography className={classes.text}>PL :</Typography>
+                        <Typography className={classes.text}>
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            PL:
+                          </div>{" "}
+                          HR
+                        </Typography>
                       </CCol>
                       <CCol>
                         <Typography className={classes.text}>
-                          Salary :
+                          <div
+                            style={{
+                              color: "gray",
+                              display: "inline",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            SALARY:
+                          </div>{" "}
+                          60000
                         </Typography>
                       </CCol>
                     </CRow>
@@ -306,7 +369,7 @@ export default function KeyAddition() {
                       </CCol>
                     </CRow>
                   </CCol>
-                </CFormGroup>
+                </CRow>
               </CCardBody>
             </CCard>
             {adjust === "1" && <TransferIn />}

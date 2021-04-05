@@ -115,12 +115,14 @@ export default function TransferOut() {
               <Container>
                 <div className={classes.root}>
                   <Grid container spacing={3} className={classes.padding1}>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item xs={12} md={12} lg={4}>
                       <Typography className={classes.text}>
-                        Position Code
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Position Code
+                        </div>
                       </Typography>
                     </Grid>
-                    <Grid item xs={8} lg={8}>
+                    <Grid item xs={12} md={12} lg={8}>
                       <CInput
                         id="text-input"
                         name="text-input"
@@ -130,12 +132,14 @@ export default function TransferOut() {
                   </Grid>
 
                   <Grid container spacing={3} className={classes.padding1}>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item xs={12} md={12} lg={4}>
                       <Typography className={classes.text}>
-                        Effective Date
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Effective Date
+                        </div>
                       </Typography>
                     </Grid>
-                    <Grid item xs={8} lg={8}>
+                    <Grid item xs={12} md={12} lg={8}>
                       <CInput
                         id="text-input"
                         name="text-input"
@@ -145,10 +149,14 @@ export default function TransferOut() {
                   </Grid>
 
                   <Grid container spacing={3} className={classes.padding1}>
-                    <Grid item xs={4} lg={4}>
-                      <Typography className={classes.text}>Reason</Typography>
+                    <Grid item xs={12} md={12} lg={4}>
+                      <Typography className={classes.text}>
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Reason
+                        </div>
+                      </Typography>
                     </Grid>
-                    <Grid item xs={8} lg={8}>
+                    <Grid item xs={12} md={12} lg={8}>
                       <CSelect
                         custom
                         name="select"

@@ -80,36 +80,35 @@ export default function JobDetails(props) {
                       maxWidth: "100%",
                       maxHeight: "100%",
                     }}
-                    src="/images/avatars/avatar_2.png"
+                    src="/images/all/career/HR.jpg"
                     
                   />
                 </span>
                 <figcaption>
                   <h2>
-                    Teacher - High School Level Math, Science &amp; SAT/ACT Prep
+                    HR
                   </h2>
                   <span>
-                    <small className="careerfy-jobdetail-type">Freelance</small>{" "}
-                    Huntington Learning Center{" "}
+                    {/* <small className="careerfy-jobdetail-type">Freelance</small>{" "} */}
+                    THAI POLYETHYLENE CO LTD. RAYONG{" "}
                     <small className="careerfy-jobdetail-postinfo">
                       Posted now
                     </small>
                   </span>
                   <ul className="careerfy-jobdetail-options">
                     <li>
-                      <i className="fa fa-map-marker" /> Derry Street, London,
-                      United Kingdom{" "}
+                      <i className="fa fa-map-marker" /> Rayong, Thailand
                       <a href="# " className="careerfy-jobdetail-view">
                         View om Map
                       </a>
                     </li>
                     <li>
                       <i className="careerfy-icon careerfy-calendar" /> Post
-                      Date: May 18, 2017
+                      Date: Dec 1, 2020
                     </li>
                     <li>
                       <i className="careerfy-icon careerfy-calendar" /> Apply
-                      Before: Aug 15, 2018
+                      Before: Mar 31, 2021
                     </li>
                     <li>
                       <i className="careerfy-icon careerfy-summary" />{" "}
@@ -176,7 +175,7 @@ export default function JobDetails(props) {
                     <li className="careerfy-column-4">
                       <i className="careerfy-icon careerfy-salary" />
                       <div className="careerfy-services-text">
-                        Offerd Salary <small>£50,000+</small>
+                        Offerd Salary <small>50,000 Baht</small>
                       </div>
                     </li>
                     <li className="careerfy-column-4">

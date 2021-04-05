@@ -93,7 +93,6 @@ const useStyles = makeStyles((theme) => ({
 export default function PaymentChange() {
   const classes = useStyles();
 
-
   //   test
   const [count, setCount] = React.useState(1);
   const [edit, setEdit] = React.useState([count]);
@@ -129,12 +128,14 @@ export default function PaymentChange() {
               <Container>
                 <div className={classes.root}>
                   <Grid container spacing={3} className={classes.padding1}>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item xs={12} md={12} lg={4}>
                       <Typography className={classes.text}>
-                        Effective Date
+                        <div style={{ fontWeight: "bold", color: "GrayText" }}>
+                          Effective Date
+                        </div>
                       </Typography>
                     </Grid>
-                    <Grid item xs={8} lg={8}>
+                    <Grid item xs={12} md={12} lg={8}>
                       <CSelect
                         custom
                         name="select"
@@ -156,12 +157,16 @@ export default function PaymentChange() {
                   {/* test */}
                   {edit.map((name) => (
                     <Grid container spacing={3} className={classes.padding1}>
-                      <Grid item xs={4} lg={4}>
+                      <Grid item xs={12} md={12} lg={4}>
                         <Typography className={classes.text}>
-                          Adjust item {name}
+                          <div
+                            style={{ fontWeight: "bold", color: "GrayText" }}
+                          >
+                            Adjust item {name}
+                          </div>
                         </Typography>
                       </Grid>
-                      <Grid item xs={8} lg={8}>
+                      <Grid item xs={12} md={12} lg={8}>
                         <CSelect
                           custom
                           name="select"
@@ -178,10 +183,16 @@ export default function PaymentChange() {
                           <option value="7">Terminate</option>
                         </CSelect>
                       </Grid>
-                      <Grid item xs={4} lg={4}>
-                        <Typography className={classes.text}>Amount</Typography>
+                      <Grid item xs={12} md={12} lg={4}>
+                        <Typography className={classes.text}>
+                          <div
+                            style={{ fontWeight: "bold", color: "GrayText" }}
+                          >
+                            Amount
+                          </div>
+                        </Typography>
                       </Grid>
-                      <Grid item xs={8} lg={8}>
+                      <Grid item xs={12} md={12} lg={8}>
                         <CInput
                           id="text-input"
                           name="text-input"

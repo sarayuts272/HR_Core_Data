@@ -122,7 +122,7 @@ export default function EmployeeProfile(props) {
                   <Avatar className={classes.avatar} src={user.avatar} />
                   <div style={{ margin: "auto" }}>
                     <Typography gutterBottom variant="h6">
-                      Visavesj Chiangsan
+                      Sarayut Test
                     </Typography>
                     <Typography
                       className={classes.locationText}
@@ -136,7 +136,7 @@ export default function EmployeeProfile(props) {
                       color="textSecondary"
                       variant="body1"
                     >
-                      Started on January 1st, 2020
+                      Started on Dec 1st, 2020
                     </Typography>
                   </div>
                 </div>

@@ -72,6 +72,9 @@ export default function Career(props) {
                 <Button
                   size="large"
                   style={{ background: "white", color: "#404040" }}
+                  onClick={() =>
+                    props.history.push("/listposition")
+                  }
                 >
                   Career Dialogue{" "}<FiberManualRecordIcon style={{color : "green", fontSize: 15}} />
                 </Button>

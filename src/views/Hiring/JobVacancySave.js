@@ -2,8 +2,14 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import SearchIcon from "@material-ui/icons/Search";
+import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import StarRateIcon from "@material-ui/icons/StarRate";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import DateRangeIcon from "@material-ui/icons/DateRange";
 
+import SearchIcon from "@material-ui/icons/Search";
+import DeleteIcon from "@material-ui/icons/Delete";
 import {
   CCard,
   CCardBody,
@@ -14,7 +20,81 @@ import {
   CButton,
 } from "@coreui/react";
 
-export default function JobVacancySave() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    width: "100%",
+    paddingBottom: 50,
+    //   backgroundColor: theme.palette.background.paper,
+    backgroundColor: "white",
+    paddingTop: 30,
+  },
+  background: {
+    flexGrow: 1,
+    width: "100%",
+    backgroundColor: "#D1C8C4",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(20),
+    flexBasis: "50%",
+    width: "50%",
+    marginTop: 15,
+  },
+  padding1: {
+    paddingTop: 15,
+    paddingLeft: 80,
+    paddingRight: 70,
+  },
+  text: {
+    fontSize: theme.typography.pxToRem(20),
+    // flexBasis: "50%",
+    marginTop: 15,
+  },
+  topname: {
+    fontSize: theme.typography.pxToRem(25),
+    // flexBasis: "50%",
+    marginTop: 15,
+    background: "yellow",
+  },
+}));
+
+export default function JobVacancySave(props) {
+  const classes = useStyles();
+
+  const [dataList, setDataList] = React.useState([
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/HR.jpg",
+      job: "HR",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Rayong",
+      date: "April 5, 2021",
+    },
+    {
+      img: "/images/all/career/Programmer.jpg",
+      job: "Programmer",
+      jobFam: "Job Family",
+      subJobFam: "Sub Job Family",
+      prov: "Bangkok",
+      date: "April 5, 2021",
+    },
+  ]);
 
   return (
     <React.Fragment>
@@ -29,239 +109,92 @@ export default function JobVacancySave() {
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>
                 <CRow>
-                  <CCol lg={7} style={{display: "flex"}}>Saved Jobs</CCol>
-                  <CCol lg={5} style={{display: "flex"}}>
-                      <CInput className="mr-sm-2" placeholder="Search Orders" />
-                   
-                      <CButton
-                        color="outline-success"
-                        className="my-2 my-sm-0"
-                        type="submit"
-                        size="sm"
-                      >
+                  <CCol lg={7} style={{ display: "flex" }}>
+                    Saved Job
+                  </CCol>
+                  <CCol lg={5} style={{ display: "flex" }}>
+                    <CInput className="mr-sm-2" placeholder="Search Orders" />
 
-                        <SearchIcon />
-                      </CButton>
+                    <CButton
+                      color="outline-success"
+                      className="my-2 my-sm-0"
+                      type="submit"
+                      size="sm"
+                    >
+                      <SearchIcon />
+                    </CButton>
                   </CCol>
                 </CRow>
               </CCardHeader>
               <CCardBody>
-                <div className="careerfy-column-12">
+                {dataList.map((value) => (
                   <div className="careerfy-typo-wrap">
-                    <div className="careerfy-candidate-savedjobs">
-                      <div className="careerfy-candidate-savedjobs-wrap">
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Job Title</th>
-                              <th>Company</th>
-                              <th>Saved Date </th>
-                              <th />
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">German Speaking Team Leader</a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>@ Yup Studios</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">Sales Manager – Beauty Product</a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>@ Yup Studios</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">
-                                    Web Developer – PHP, HTML, CSS....
-                                  </a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>@ Yup Studios</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">JavaScript Developer</a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>@ Yup Studios</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">
-                                    Senior Finance Contracts Administrator
-                                  </a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>@ Yup Studios</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-thumb"
-                                >
-                                  <img
-                                    style={{
-                                      maxWidth: "100%",
-                                      maxHeight: "100%",
-                                    }}
-                                    src="/images/avatars/avatar_1.png"
-                                    alt=" "
-                                  />
-                                </a>
-                                <h2>
-                                  <a href="# ">JavaScript Developer</a>
-                                </h2>
-                              </td>
-                              <td>
-                                <span>Broken Dreams Fingerstyle</span>
-                              </td>
-                              <td>Sep 26, 2017</td>
-                              <td>
-                                <a
-                                  href="# "
-                                  className="careerfy-savedjobs-links"
-                                >
-                                  <i className="careerfy-icon careerfy-rubbish" style={{fontSize: "20px"}}/>
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                    <div className="careerfy-applied-jobs">
+                      <ul className="careerfy-column-12">
+                        <div className="careerfy-applied-jobs-wrap">
+                          <a href="# " className="careerfy-applied-jobs-thumb">
+                            <img
+                              alt=" "
+                              style={{
+                                maxWidth: "100%",
+                                maxHeight: "100%",
+                              }}
+                              src={value.img}
+                              alt=" "
+                            />
+                          </a>
+                          <div
+                            className="careerfy-applied-jobs-text"
+                            style={{ paddingLeft: "50px", alignSelf: "center" }}
+                          >
+                            <div className="careerfy-applied-jobs-left">
+                              <h2>{value.job}</h2>
+                              <ul>
+                                <li>
+                                  <i>
+                                    <StarRateIcon />
+                                  </i>{" "}
+                                  {value.jobFam}
+                                </li>
+                                <li>
+                                  <i>
+                                    <StarRateIcon />
+                                  </i>{" "}
+                                  {value.subJobFam}
+                                </li>
+                                <li>
+                                  <i>
+                                    <LocationOnIcon />
+                                  </i>
+                                  {value.prov}
+                                </li>
+
+                                <div>
+                                  <li>
+                                    <i>
+                                      <DateRangeIcon />
+                                    </i>
+                                    {value.date}
+                                  </li>
+                                </div>
+                              </ul>
+                            </div>
+                            <a className="careerfy-savedjobs-links">
+                              <Box
+                                display="flex"
+                                flexDirection="row"
+                                paddingLeft={5}
+                                justifyContent="center"
+                              >
+                                <DeleteIcon fontSize="large" />
+                              </Box>
+                            </a>
+                          </div>
+                        </div>
+                      </ul>
                     </div>
                   </div>
-                </div>
+                ))}
               </CCardBody>
             </CCard>
           </CCol>

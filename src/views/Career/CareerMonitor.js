@@ -27,7 +27,7 @@ export default function CareerMonitor() {
         </Typography> */}
 
         <CRow>
-          <CCol sm="3" xl="3">
+          <CCol sm="12" md="12" xl="3">
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>Search</CCardHeader>
               <CCardBody>
@@ -63,7 +63,7 @@ export default function CareerMonitor() {
               </CCardBody>
             </CCard>
           </CCol>
-          <CCol sm="9" xl="9" style={{ fontSize: 20 }}>
+          <CCol sm="12" md="12" xl="9" style={{ fontSize: 20 }}>
             <CCard>
               <CCardHeader style={{ fontSize: 25 }}>
                 Career Inspiration{" "}
@@ -107,7 +107,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">
@@ -160,7 +160,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">
@@ -213,7 +213,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">
@@ -266,7 +266,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">
@@ -319,7 +319,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">
@@ -372,7 +372,7 @@ export default function CareerMonitor() {
                               href="# "
                               className="careerfy-employer-thumblist-size"
                             >
-                              +3 people inspried
+                              +3 people inspired
                             </a>
                           </div>
                           <div className="careerfy-table-cell">

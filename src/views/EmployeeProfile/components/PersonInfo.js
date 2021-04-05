@@ -56,7 +56,7 @@ export default function PersonInfo() {
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <Typography className={classes.secondaryHeading}>
-                      Visavesj Chiangsan
+                      Sarayut Test
                     </Typography>
                   </Grid>
                 </Grid>
@@ -72,7 +72,7 @@ export default function PersonInfo() {
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <Typography className={classes.secondaryHeading}>
-                      Ice
+                      J
                     </Typography>
                   </Grid>
                 </Grid>
@@ -220,7 +220,7 @@ export default function PersonInfo() {
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <Typography className={classes.secondaryHeading}>
-                      ChiangMai University
+                      HY
                     </Typography>
                   </Grid>
                 </Grid>

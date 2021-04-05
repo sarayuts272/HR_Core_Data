@@ -113,7 +113,7 @@ export default function Login(props) {
         <Typography gutterBottom variant="h5" component="h2">
           Login
         </Typography>
-        <Formik initialValues={{ username: "admin", password: "1234" }}>
+        <Formik initialValues={{ username: "type1", password: "1234" }}>
           {(props) => showForm(props)}
         </Formik>
       </CardContent>
